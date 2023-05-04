@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="client/css/style.css"> -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <title>Login</title>
+    <style type="text/css">
+        .jumbotron {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jumbotron" style="background: DarkSeaGreen !important">
+        <h1> Login Page </h1>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" name="username" id="username" required="" value="">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" name="password" id="password" required="" value="">
+            </div>
+            <button type="button" class="btn btn-block btn-primary" , onclick="Submit()">Login</button>
+            <div class="container mt-3" id="loginAlert"></div>
+        </div>
+        <script>
+            function Submit() {
+                let password = $('#password');
+                let username = $('#username');
+                // fetch('./loginValid')
+                // .then(response => response.json())
+                // .then(data => fillIn(data))
+                fetch('/loginValid', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        username: username.val(),
+                        password: password.val(),
+                    }),
+                    headers: {
+                        'Content-type': 'application/json; charset=UTF-8',
+                    }
+                })
+                    .then(function (response) {
+                        return response.json()
+                    })
+                    .then(function (data) {
+                        if (data.status == 'FAIL') {
+                            createAlert();
+                            // alert("Login Fail");
+                            // password.val() = "";
+                            // username.val() = "";
+                            window.location.href = 'login';
+                        }
+                        else {
+                            removeAlert();
+                            window.location.href = '/schedule';
+                        }
+                    }).catch(error => console.error('Error:', error));
+            }
+            function createAlert() {
+                let listItems = events.map((event) =>
+                    `<li class="list-group-item">${event.name} from ${event.start} to ${event.end}`)
+                    .join('');
+                let newHtml = `<div class="alert alert-warning" role="alert" >Wrong username or password</div>`;
+                $('#loginAlert').html(newHtml);
+
+            }
+
+            function removeAlert() {
+                let newHtml = `<div class="alert alert-success" role="alert">Login Success</div>`;
+                $('#loginAlert').html(newHtml);
+            }
+        </script>
+        <div class="col-md-1"></div>
+    </div>
+</body>
+
+</html>
