@@ -1,0 +1,10 @@
+{
+    event_day: "Monday",
+    event_event: "CSCI2041",
+    event_start: "09:00",
+    event_end: "09:55",
+    event_location: "Tate Hall",
+    event_phone: "000-000-0000",
+    event_info: "Extra",
+    event_url: "https://www.w3schools.com/html/html_links.asp"
+}
