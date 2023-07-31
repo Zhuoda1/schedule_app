@@ -1,9 +1,0 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer components {
-  .dateItem {
-    @apply font-semibold text-xl text-gray-700  px-7 py-3 rounded-lg cursor-pointer hover:text-gray-400;
-  }
-}
