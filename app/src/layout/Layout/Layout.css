@@ -1,0 +1,17 @@
+.layoutWrapper{
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+  }
+  
+  .headerWrapper{
+    flex: 0 1 auto;
+  }
+  
+  .outletWrapper{
+    flex: 1 1 auto;
+  }
+  
+  .footerWrapper{
+    /* flex: 0 1 40px; */
+  }
