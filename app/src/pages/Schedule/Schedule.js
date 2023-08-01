@@ -1,5 +1,6 @@
 import React from 'react'
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+import ScheduleTable from '../../components/ScheduleTable/ScheduleTable'
 
 const dayInWeek = [
   {
@@ -24,26 +25,29 @@ const dayInWeek = [
     label: "Sunday",
   },
 ]
+
 function Schedule() {
   return (
     <>
-      <Tabs isFitted colorScheme='purple'>
-        <TabList mb='1em'>
-          {dayInWeek.map((item, i) => {
-            <Tab>
-              {item.label}
-            </Tab>
-          })}
-          <Tab>One</Tab>
-        </TabList>
-        <TabPanels>
-          {/* {dayInWeek.map((item, i) => {
-            <TabPanel key={i}>
-              {item.label}
-            </TabPanel>
-          })} */}
-        </TabPanels>
-      </Tabs>
+        <Tabs isFitted colorScheme='purple'>
+          <TabList>
+            {dayInWeek.map((item, i) => {
+              return (
+                <Tab key={i}>
+                  {item.label}
+                </Tab>)
+            })}
+          </TabList>
+          <TabPanels>
+            {dayInWeek.map((item, i) => {
+              return (
+                <TabPanel key={i}>
+                  <ScheduleTable day={item.label.toLowerCase()}/>
+                </TabPanel>
+              )
+            })}
+          </TabPanels>
+        </Tabs>
     </>
 
   )
