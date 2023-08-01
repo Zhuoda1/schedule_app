@@ -1,8 +1,7 @@
 import React from 'react'
 
-import { Image, Flex, Button, HStack, chakra } from '@chakra-ui/react';
+import { Flex, Button, HStack, chakra } from '@chakra-ui/react';
 
-import { Link } from 'react-scroll'
 import { useNavigate } from "react-router-dom";
 const CTA = "Get Started"
 
