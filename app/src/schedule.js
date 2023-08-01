@@ -10,12 +10,12 @@ export const scheduleData= {
             "url": "https://www.w3schools.com/html/html_links.asp"
         },
         {
-            "name": "Csci 4131 Lecture",
+            "name": "CSCI 4131 Lecture",
             "start": "11:15",
             "end": "12:30",
             "phone": "See Class information on Canvas",
             "location": "105 Tate Hall",
-            "info": "CSci 4131 Info",
+            "info": "CSCI 4131 Info",
             "url": "https://onestop2.umn.edu/pcas/viewCatalogCourse.do?courseId=790654"
         },
         {
@@ -41,12 +41,12 @@ export const scheduleData= {
     ],
     "wednesday": [
         {
-            "name": "CSci 4131 Lecture",
+            "name": "CSCI 4131 Lecture",
             "start": "11:15",
             "end": "12:30",
             "phone": "See Class information on Canvas",
             "location": "105 Tate Hall",
-            "info": "CSci 4131 Info",
+            "info": "CSCI 4131 Info",
             "url": "https://onestop2.umn.edu/pcas/viewCatalogCourse.do?courseId=790654"
         }
     ],

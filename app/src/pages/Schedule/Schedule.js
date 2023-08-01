@@ -29,7 +29,7 @@ const dayInWeek = [
 function Schedule() {
   return (
     <>
-        <Tabs isFitted colorScheme='purple'>
+        <Tabs isFitted colorScheme='purple' className='px-10'>
           <TabList>
             {dayInWeek.map((item, i) => {
               return (

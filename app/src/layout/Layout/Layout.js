@@ -16,7 +16,7 @@ function Layout() {
         </div>
 
         <div className="footerWrapper">
-          <Footer />
+          <Footer/>
         </div>
       </div>
     </>

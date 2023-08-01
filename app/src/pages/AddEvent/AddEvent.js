@@ -1,9 +1,10 @@
 import React from 'react'
+import AddEventForm from '../../components/AddEventForm/AddEventForm'
 
 function AddEvent() {
-    return (
-        <div>AddEvent</div>
-    )
+  return (
+    <AddEventForm/>
+  )
 }
 
 export default AddEvent
